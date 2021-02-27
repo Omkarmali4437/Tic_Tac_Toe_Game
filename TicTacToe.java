@@ -44,6 +44,13 @@ class TicTacToe
 		System.out.println(board[7] + " | "+ board[8] + " | " +  board[9]);
 	}
 
+	public void First_move(int position)
+	{
+		char p=player.charAt(0);
+		char c=computer.charAt(0);
+		board[position]=p;
+	}
+
 	public static void main(String[] args)
    {
 		TicTacToe tictac=new TicTacToe();
@@ -55,6 +62,11 @@ class TicTacToe
 		tictac.assign(symbol);
 		System.out.println("Player is: "+player);
 		System.out.println("Computer is: "+computer);
+
+		System.out.println("Enter the position you want to start between 1-9: ");
+		int position=sc.nextInt();
+		tictac.First_move(position);
+
 		tictac.showboard();
    }
 }
