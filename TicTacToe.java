@@ -3,6 +3,10 @@ import java.util.Scanner;
 class TicTacToe
 {
 	static char[] board;
+	//Constats
+	public static final int Heads=1;
+	public static final int Tails=0;
+	//Variables
 	public static String computer;
 	public static String player;
 
@@ -60,6 +64,21 @@ class TicTacToe
 		}
 	}
 
+	public void Start_move()
+	{
+		int Toss = (int)Math.floor(Math.random() * 10)%2;
+		System.out.println("Toss is: "+Toss);
+		switch(Toss)
+		{
+			case Heads:
+				System.out.println("User won the toss it is Heads. So user starts first.");
+				break;
+			case Tails:
+				System.out.println("Computer won the toss it is Tails. So computer starts first.");
+			break;
+		}
+	}
+
 	public static void main(String[] args)
 	{
 		TicTacToe tictac=new TicTacToe();
@@ -72,14 +91,8 @@ class TicTacToe
 		System.out.println("Player is: "+player);
 		System.out.println("Computer is: "+computer);
 
-		System.out.println("Enter the position you want to start between 1-9: ");
-		int position=sc.nextInt();
-		int cposition = (int)Math.floor(Math.random() * (10-1))+1;
-		System.out.println(cposition);
+		tictac.Start_move();
 
-		tictac.First_move(position,cposition);
-
-		tictac.showboard();
    }
 }
 
